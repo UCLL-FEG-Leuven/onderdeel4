@@ -3,7 +3,7 @@ const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 module.exports = {
     entry: {
-        getalradenspel: "./src/getal-raden-spel/spel.js"
+        "getal-raden-spel": "./src/getal-raden-spel/spel.js"
     },
     output: {
         filename: '[name]-bundle.js'
@@ -13,8 +13,8 @@ module.exports = {
             events: {
                 onEnd: {
                     move: [
-                        {source: 'dist/getalradenspel-bundle.js', destination: path.resolve(__dirname, 'Public/getal-raden-spel/js/getalradenspel-bundle.js') },
-                        {source: 'dist/getalradenspel-bundle.js.map', destination: path.resolve(__dirname, 'Public/getal-raden-spel/js/getalradenspel-bundle.js.map') }
+                        {source: 'dist/getal-raden-spel-bundle.js', destination: path.resolve(__dirname, 'Public/getal-raden-spel/js/getal-raden-spel-bundle.js') },
+                        {source: 'dist/getal-raden-spel-bundle.js.map', destination: path.resolve(__dirname, 'Public/getal-raden-spel/js/getal-raden-spel-bundle.js.map') }
                     ]
                 }    
             }
