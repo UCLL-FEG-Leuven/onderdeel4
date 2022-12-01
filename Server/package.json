@@ -1,0 +1,17 @@
+{
+  "name": "onderdeel4.server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "npm install & nodemon"
+  },
+  "author": "UCLL",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

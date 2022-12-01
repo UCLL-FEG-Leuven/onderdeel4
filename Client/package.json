@@ -1,0 +1,17 @@
+{
+  "name": "onderdeel4.client",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "start": "npm install & npm run watch",
+    "build": "npx webpack",
+    "watch": "npx webpack --watch"
+  },
+  "author": "UCLL",
+  "devDependencies": {
+    "filemanager-webpack-plugin": "^8.0.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  }
+}

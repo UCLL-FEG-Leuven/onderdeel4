@@ -1,0 +1,13 @@
+{
+  "name": "onderdeel4",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Oplossingen van oefeningen 1 (getal-raden-spel), 2 (eenvoudige-rekenmachine) en 3 (eenvoudige-mijnenveger)",
+  "scripts": {
+    "start": "npm install & concurrently \"cd server & npm run start\" \"cd client & npm run start\""
+  },
+  "author": "UCLL",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
