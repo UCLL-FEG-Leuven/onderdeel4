@@ -10,6 +10,7 @@ let aantalBeurten; // Hierin zal de startSpel() functie een 0 zetten. Bij het go
 const getalInput = document.getElementById("getal");
 const ikDoeEenGokButton = document.getElementById("ikDoeEenGok");
 const resultaatParagraph = document.getElementById("resultaat");
+const form = document.querySelector("form");
 
 // Deze code registreert een 'click' handler op de <button>.
 // De event handler is geschreven in het 'arrow' function formaat.
@@ -28,15 +29,16 @@ ikDoeEenGokButton.addEventListener("click", (e) => {
             resultaatParagraph.innerText = "Lager!";
             break;
     }
-
-    // Met deze functie aanroep wordt er vermeden dat de form ge-post wordt (waardoor de pagina zou refreshen).
-    // Je kan dat ook vermijden door een type="button" attribuut te zetten op de <button>.
-    e.preventDefault();
 });
+
+// Deze code onderschept 'submit' events van de form (bijvoorbeeld als je op Enter drukt)
+// Met prevenDefault() geven we aan dat we zelf instaan voor het verwerken van submits (en willen we dus niet het default gedrag van de browser waarbij de pagina vernieuwd wordt).
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+})
 
 // Het spel kan starten!
 startSpel();
-
 
 /*
  * Hieronder staat de 'logica' van het spel. In principe zou je dat in een apart bestand kunnen steken, of beter nog: in een class.
