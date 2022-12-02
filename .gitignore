@@ -1,4 +1,4 @@
 node_modules
-Client\dist
+Client/dist
 *-bundle.js
 *-bundle.js.map
