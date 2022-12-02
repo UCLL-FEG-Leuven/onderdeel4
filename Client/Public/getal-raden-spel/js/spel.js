@@ -3,20 +3,17 @@ let aantalBeurten; // Hierin zal de startSpel() functie een 0 zetten. Bij het go
 
 // Deze code zorgt voor het ophalen van de DOM elementen. 
 // Aangezien de DOM niet wijzigt kan er gebruik worden gemaakt van 'const'.
-// De DOM elementen hebben geen 'id' waardoor we geen getElementById kunnen gebruiken.
-// Hier wordt een alternatief gebruikt: getElementsByTagName. Dit geeft een lijst van elementen terug.
-// Hiervan wordt het eerste element genomen (er is ook maar één element van elke tag), maar het zou 
-// een probleem kunnen vormen als er meer dan één element voorkomt.
 const getalInput = document.getElementById("getal");
-const ikDoeEenGokButton = document.getElementById("ikDoeEenGok");
 const resultaatParagraph = document.getElementById("resultaat");
-const form = document.querySelector("form");
+const spelFormulier = document.querySelector("form");
 
-// Deze code registreert een 'click' handler op de <button>.
-// De event handler is geschreven in het 'arrow' function formaat.
-// De event handler bevat geen spellogica maar is wel verantwoordelijk voor het geven van feedback aan 
-// de speler.
-ikDoeEenGokButton.addEventListener("click", (e) => {
+// Deze code onderschept 'submit' events van de form (bijvoorbeeld als je op Enter drukt of als je op de submit button klikt)
+spelFormulier.addEventListener("submit", (e) => {
+    // Dit zorgt ervoor dat het standaard gedrag van de browser bij een submit wordt uigeschakeld (= refresh van de pagina) 
+    // Wij zorgen voor de afhandeling van dit event!
+    e.preventDefault();
+
+    // Heeft de speler juist gegokt?
     let gokResultaat = ikDoeEenGok(getalInput.value);
     switch (gokResultaat) {
         case -1:
@@ -31,12 +28,6 @@ ikDoeEenGokButton.addEventListener("click", (e) => {
     }
 });
 
-// Deze code onderschept 'submit' events van de form (bijvoorbeeld als je op Enter drukt)
-// Met prevenDefault() geven we aan dat we zelf instaan voor het verwerken van submits (en willen we dus niet het default gedrag van de browser waarbij de pagina vernieuwd wordt).
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-})
-
 // Het spel kan starten!
 startSpel();
 
@@ -44,8 +35,7 @@ startSpel();
  * Hieronder staat de 'logica' van het spel. In principe zou je dat in een apart bestand kunnen steken, of beter nog: in een class.
  * Maar voor deze eerste oefening gaan we nog geen classes gebruiken.
  * Bemerk ook dat de logica van het spel geen gebruik maakt van de DOM (vb. geen getElementById).
- * Op die manier heeft onderstaande code maar één verantwoordelijkheid en is die bijvoorbeeld herbruikbaar
- * in een situatie waar er geen DOM is (vb. een Node applicatie).
+ * Op die manier heeft onderstaande code maar één verantwoordelijkheid en is die bijvoorbeeld herbruikbaar.
  * */
 
 // Deze functie start een nieuw spel.
