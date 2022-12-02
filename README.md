@@ -7,7 +7,7 @@ een deeloplossing met webpack (```Client/Public/{oefening}/index.webpack.html```
 
 # Uitvoeren met Express
 
-Om een oplossing te starten open je eerst een terminal of een command prompt in deze directory.  
+Om de website met al de oefeningen te starten open je eerst een terminal of een command prompt in deze directory.  
 Vervolgens voer je onderstaand commando uit
 
 ```npm run start```
